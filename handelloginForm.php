@@ -13,11 +13,10 @@ if (isset($_POST['submit'])) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $hashedPassword = $row['password'];
-        $name = $row['name'];
-        $_SESSION['name'] = $name; // Set user's name in the session
-
+ 
         if (password_verify($password, $hashedPassword)) {
             // Login successful
+            $_SESSION['user'] = $row;
             // Perform any additional actions after successful login
             header('Location: login.php'); // Redirect to dashboard or any other page
             exit();
