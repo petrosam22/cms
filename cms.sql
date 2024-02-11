@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 09, 2024 at 09:34 AM
+-- Generation Time: Feb 11, 2024 at 04:26 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `cms`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contents`
+--
+
+DROP TABLE IF EXISTS `contents`;
+CREATE TABLE IF NOT EXISTS `contents` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `photo` varchar(255) DEFAULT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `contents`
+--
+
+INSERT INTO `contents` (`id`, `title`, `description`, `photo`, `user_id`) VALUES
+(9, 'ads', 'das\r\n\r\n                                            ', 'bebo.jpg', 1),
+(10, 'ads', 'ads\r\n\r\n                                            ', 'bebo.jpg', 3);
 
 -- --------------------------------------------------------
 
